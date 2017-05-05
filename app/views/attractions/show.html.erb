@@ -1,0 +1,15 @@
+<% if @user.admin %>
+    <p> ADMIN </p>
+<% end %>
+<p>Name: <%= @attraction.name %></p>
+<p>Mood: <%= @attraction.nausea_rating %></p>
+<p>Mood: <%= @attraction.happiness_rating %></p>
+<p>Tickets: <%= @attraction.tickets %></p>
+<p>Height: <%= @attraction.min_height %></p>
+<p><%= link_to 'Log Out', logout_path, method: :delete %></p>
+<p><%= link_to 'See attractions', attractions_path %></p>
+
+<p><%= form_tag take_ride_path do%></p>
+<p><%= hidden_field_tag 'attraction[id]', @attraction.id%></p>
+<p><%= submit_tag "Go on this ride"%></p>
+<p><%end%></p>
