@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   root to: 'welcome#index'
+
   get '/attractions', to: 'attractions#index', as: 'attractions'
+  get '/attractions/new', to: 'attractions#new', as: 'new_attraction'
+  post '/attractions', to: 'attractions#create'
+
+  get '/attractions/:id/edit', to: 'attractions#edit', as: 'edit_attraction'
+  patch '/attractions/:id', to: 'attractions#update', as: 'stuck_here_for_one_hour'
+
   get '/attractions/:id', to: 'attractions#show', as: 'show_attraction'
   post '/takingaride', to: 'rides#create', as: 'take_ride'
   #get '/', to: 'welcome#index', as: 'root'

@@ -1,3 +1,13 @@
+<% if @user.admin %>
+    <p> ADMIN </p>
+    <%= link_to 'New Attraction', new_attraction_path %>
+<% end %>
+
 <p><% @attractions.each do |attraction| %></p>
-<p><%= link_to "Go on #{attraction.name}", show_attraction_path(attraction)  %></p>
+
+  <% if @user.admin %>
+    <p><%= link_to "Show #{attraction.name}", show_attraction_path(attraction)  %></p>
+  <% else %>
+    <p><%= link_to "Go on #{attraction.name}", show_attraction_path(attraction)  %></p>
+  <% end %>
 <p><% end %></p>

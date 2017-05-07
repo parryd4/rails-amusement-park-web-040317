@@ -1,17 +1,13 @@
-<%= form_for @user do |f| %>
+<%= form_for @attraction do |f| %>
 <label>Name</label><br>
 <%= f.text_field :name %><br>
-<label>Password</label><br>
-<%= f.text_field :password %><br>
-<label>Height</label><br>
-<%= f.text_field :height %><br>
-<label>Happy</label><br>
-<%= f.text_field :happiness %><br>
-<label>Nausea</label><br>
-<%= f.text_field :nausea %><br>
+<label>Height Requirement (in inches)</label><br>
+<%= f.text_field :min_height %><br>
+<label>How fun is it? (1-5 scale)</label><br>
+<%= f.text_field :happiness_rating %><br>
+<label>How nausea-inducing is it? (1-5 scale)</label><br>
+<%= f.text_field :nausea_rating %><br>
 <label>Dollars</label><br>
 <%= f.text_field :tickets %><br>
-<label>Admin</label>
-<%= f.check_box :admin %><br>
 <%= f.submit %>
 <% end %>

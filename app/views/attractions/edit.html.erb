@@ -1,0 +1,20 @@
+<!-- takeaway: form_for @attraction was looking for attraction_path by default,
+and I had now attractions_path
+the argument for form_form url: is where the form is submitting to?
+changing the verb to patch helped, although in another lab I referenced the update action verb was "put"
+
+and so I walk away from this lab successful but more confused. 
+-->
+<%= form_for @attraction, url: stuck_here_for_one_hour_path(@attraction)  do |f| %>
+<label>Name</label><br>
+<%= f.text_field :name %><br>
+<label>Height Requirement (in inches)</label><br>
+<%= f.text_field :min_height %><br>
+<label>How fun is it? (1-5 scale)</label><br>
+<%= f.text_field :happiness_rating %><br>
+<label>How nausea-inducing is it? (1-5 scale)</label><br>
+<%= f.text_field :nausea_rating %><br>
+<label>Dollars</label><br>
+<%= f.text_field :tickets %><br>
+<%= f.submit %>
+<% end %>
